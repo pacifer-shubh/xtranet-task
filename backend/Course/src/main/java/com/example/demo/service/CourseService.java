@@ -1,0 +1,42 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Course;
+import com.example.demo.exceptions.ResourceNotFoundException;
+import com.example.demo.repository.CourseRepository;
+
+@Service
+public class CourseService {
+	
+	
+	@Autowired
+	CourseRepository courseRepository;
+	
+	
+	//to add new course
+	public Course addCourse(Course course) {
+		
+		courseRepository.save(course);
+		
+		return course;
+	}
+	
+	//to get all course
+	public List<Course> getAllCourse(){
+		
+		List<Course> courses = courseRepository.findAll();
+		
+		return courses;
+	}
+	
+	// to get course by id
+	public Course getCourseById(String id) {
+		
+		Course course = courseRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(id+"not found"));
+		return course;
+	}
+}

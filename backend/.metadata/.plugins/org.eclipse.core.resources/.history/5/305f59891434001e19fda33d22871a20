@@ -1,0 +1,5 @@
+package com.section.repository;
+
+public interface SectionRepository {
+
+}

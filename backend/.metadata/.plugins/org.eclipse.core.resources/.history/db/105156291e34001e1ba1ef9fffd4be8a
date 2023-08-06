@@ -1,0 +1,8 @@
+package com.section.entity;
+
+public class Course {
+	
+	private String id;
+	private String name;
+
+}

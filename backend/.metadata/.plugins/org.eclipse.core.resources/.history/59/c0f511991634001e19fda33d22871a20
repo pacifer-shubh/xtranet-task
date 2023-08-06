@@ -1,0 +1,34 @@
+package com.section.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.section.entity.Section;
+import com.section.repository.SectionRepository;
+
+@Service
+public class SectionService {
+	
+	
+	@Autowired
+	SectionRepository sectionRepository;
+	
+	
+	// to add new 
+	private Section addNewSection(Section section) {
+		
+		sectionRepository.save(section);
+		
+		return section;
+	}
+	
+	//	to get all
+	
+	private List<Section> getAll(){
+		
+		return sectionRepository.findAll();
+	}
+
+}

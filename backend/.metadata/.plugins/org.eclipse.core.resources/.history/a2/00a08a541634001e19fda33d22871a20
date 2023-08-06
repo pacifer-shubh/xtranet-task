@@ -1,0 +1,5 @@
+package com.section.entity;
+
+public class Section {
+
+}

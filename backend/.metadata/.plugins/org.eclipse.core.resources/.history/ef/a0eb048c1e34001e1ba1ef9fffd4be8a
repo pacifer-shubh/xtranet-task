@@ -1,0 +1,17 @@
+package com.section.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+
+@Entity
+public class Course {
+	
+	private String id;
+	private String name;
+	
+	
+	
+//	@OneToMany(mappedBy = "section")
+//	private List<Section>
+
+}
